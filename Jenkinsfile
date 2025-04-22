@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        jdk 'JDK18'  // Use the name configured in Jenkins' tool installations
+    }
     stages {
         stage('Checkout') {
             steps {
