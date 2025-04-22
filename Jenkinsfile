@@ -1,9 +1,6 @@
 pipeline {
     agent any
     tools {
-        jdk 'JDK18'  // Use the name configured in Jenkins' tool installations
-    }
-    stages {
         stage('Checkout') {
             steps {
                 git branch: 'master', url: 'https://github.com/AmIWhatIAm/practical_8_github_action.git'
@@ -34,7 +31,7 @@ post {
     always 
     { 
         echo 'Cleaning up workspace' 
-        deleteDir() // Clean up the workspace after the build 
+        // deleteDir() // Clean up the workspace after the build 
     } 
     success { 
         echo 'Build succeeded!!!' // You could add notification steps here 
